@@ -1,0 +1,16 @@
+<h1>My Form</h1>
+
+<form (ngSubmit)= "onSubmit(form.value)" #form = "ngForm" novalidate>
+    <div>
+        Email Address:
+        <input type = "email" name = "email" [ngModel]>
+    </div>
+    <div>
+        Password:
+        <input type = "password" name = "password" [ngModel]>
+    </div>
+
+    <button type = submit>
+        Submit
+    </button>
+</form>
