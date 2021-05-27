@@ -17,7 +17,7 @@ export class AuthRememberComponent implements OnInit {
   }
 
   onCheckboxClick(event : any){
-    console.log(event.target.checked);
+    // console.log(event.target.checked);
     this.check.emit(event.target.checked);
   }
 

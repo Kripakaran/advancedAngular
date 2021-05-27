@@ -12,4 +12,9 @@
 
     <ng-content select = "button" ></ng-content>
     <ng-content select = "app-auth-remember"></ng-content>
+    <!-- <div *ngIf = "loggedIn">
+        you will be logged in for 30 days
+    </div> -->
+
+    <app-auth-message [style.display] = "(loggedIn ? 'inherit' : 'none')"></app-auth-message>
 </form>
