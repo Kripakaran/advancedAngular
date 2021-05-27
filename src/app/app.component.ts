@@ -9,7 +9,17 @@ import { User } from './auth-form/User';
 export class AppComponent {
   title = 'advanced-angular';
 
-  handleSubmit(emittedUser: User){
-    console.log(emittedUser);
+  rememberMe: Boolean = false;
+
+  createUser(emittedUser: User){
+    console.log('created account', emittedUser);
+  }
+
+  loginUser(emittedUser: User){
+    console.log('logged account', emittedUser);
+  }
+
+  handleRemember(remember:  Boolean){
+    this.rememberMe = remember;
   }
 }

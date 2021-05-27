@@ -1,6 +1,6 @@
-<h1>My Form</h1>
 
 <form (ngSubmit)= "onSubmit(form.value)" #form = "ngForm" novalidate>
+    <ng-content select = "h1"></ng-content>
     <div>
         Email Address:
         <input type = "email" name = "email" [ngModel]>
@@ -10,7 +10,6 @@
         <input type = "password" name = "password" [ngModel]>
     </div>
 
-    <button type = submit>
-        Submit
-    </button>
+    <ng-content select = "button" ></ng-content>
+    <ng-content select = "app-auth-remember"></ng-content>
 </form>

@@ -20,7 +20,7 @@ export class AuthFormComponent implements OnInit {
   }
 
   onSubmit(user: User){
-    console.log(user);
+    // console.log(user);
     this.submittedUser.emit(user);
   }
 
