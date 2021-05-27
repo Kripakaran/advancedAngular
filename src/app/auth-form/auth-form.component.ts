@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ContentChild, AfterContentInit, Renderer2, ViewChild, AfterViewInit, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ContentChild, AfterContentInit, ViewChild, AfterViewInit, ChangeDetectorRef, ElementRef } from '@angular/core';
 import { AuthMessageComponent } from '../auth-message/auth-message.component';
 import { AuthRememberComponent } from '../auth-remember/auth-remember.component';
 import { User } from './User';
@@ -25,7 +25,7 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
 
   loggedIn: Boolean = false;
 
-  constructor(private renderer: Renderer2 ,private cd : ChangeDetectorRef) { }
+  constructor(private cd : ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
