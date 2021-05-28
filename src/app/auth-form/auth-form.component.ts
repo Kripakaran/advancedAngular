@@ -11,17 +11,17 @@ import { User } from './User';
 
 
 
-export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewInit {
+export class AuthFormComponent implements OnInit {
 
   @Output()
   submittedUser: EventEmitter<User> = new EventEmitter();
 
-  @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;
+ // @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;
 
-  @ViewChild(AuthMessageComponent)
-  message: AuthMessageComponent;
+ // @ViewChild(AuthMessageComponent)
+ // message: AuthMessageComponent;
 
-  @ViewChild('email') email: ElementRef;
+  // @ViewChild('email') email: ElementRef;
 
   loggedIn: Boolean = false;
 
@@ -30,33 +30,7 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
   ngOnInit(): void {
   }
 
-  ngAfterContentInit() {
 
-    if(this.remember){
-    // console.log(this.remember);
-    this.remember?.check.subscribe(res => {
-      this.loggedIn = res;
-    })
-  }
-  }
-
-  ngAfterViewInit(){
-
-    this.email.nativeElement.setAttribute('placeholder', 'Enter your email address');
-    this.email.nativeElement.classList.add('email');
-    this.email.nativeElement.focus();
-     
-    /* equivalent renderer implementation (renderer is better because its platform independant)
-
-       this.renderer.setElementAttribute('email', 'placeholder', 'enter your email address');
-    */  
-    
-    // console.log(this.message);
-     if(this.message){
-      this.message.days = 30;
-      }
-     this.cd.detectChanges();
-}
 
   onSubmit(user: User){
     // console.log(user);
