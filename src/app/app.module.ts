@@ -21,6 +21,9 @@ import { AuthMessageComponent } from './auth-message/auth-message.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+    AuthFormComponent
+  ]
 })
 export class AppModule { }

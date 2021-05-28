@@ -1,6 +1,6 @@
 
 <form (ngSubmit)= "onSubmit(form.value)" #form = "ngForm" novalidate>
-    <h1> Login </h1>
+    <h1> {{ title }} </h1>
     <div>
         Email Address:
         <input type = "email" name = "email" [ngModel] #email>
@@ -11,7 +11,7 @@
     </div>
     <div>
     <button type = submit>
-        Login
+        {{ title }}
     </button>
 </div>
 </form>

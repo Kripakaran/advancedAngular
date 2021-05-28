@@ -13,6 +13,8 @@ import { User } from './User';
 
 export class AuthFormComponent implements OnInit {
 
+  title: string = 'login';
+
   @Output()
   submittedUser: EventEmitter<User> = new EventEmitter();
 
@@ -23,9 +25,9 @@ export class AuthFormComponent implements OnInit {
 
   // @ViewChild('email') email: ElementRef;
 
-  loggedIn: Boolean = false;
+  // loggedIn: Boolean = false;
 
-  constructor(private cd : ChangeDetectorRef) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
