@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { User } from './auth-form/User';
 
@@ -10,9 +10,10 @@ import { User } from './auth-form/User';
 export class AppComponent implements AfterViewInit{
 
 
-  @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef
+  @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
   
-
+  
+  component : ComponentRef<AuthFormComponent>;
   title = 'advanced-angular';
 
 
@@ -21,7 +22,14 @@ export class AppComponent implements AfterViewInit{
 
   ngAfterViewInit(){
     const authFormFactory = this.resolver.resolveComponentFactory(AuthFormComponent);
-    const component = this.entry.createComponent(authFormFactory);
+    const component2 = this.entry.createComponent(authFormFactory);
+    this.component = this.entry.createComponent(authFormFactory);
+    this.component.instance.title = 'create account'; // equivalent to @Input()
+    this.component.instance.submittedUser.subscribe(res => {
+      console.log(res);
+    }); // equivalent to Output()
+
+
 
     this.cd.detectChanges();
   }
@@ -35,5 +43,12 @@ export class AppComponent implements AfterViewInit{
     console.log('logged account', emittedUser);
   }
 
+  destroyComponent(){
+    this.component.destroy();
+  }
+
+  moveComponent(){
+    this.entry.move(this.component.hostView, 0);
+  }
 
 }
