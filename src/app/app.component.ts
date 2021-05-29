@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { User } from './auth-form/User';
 
@@ -11,6 +11,8 @@ export class AppComponent implements AfterViewInit{
 
 
   @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
+
+  @ViewChild('tmpl') tmpl: TemplateRef<any>;
   
   
   component : ComponentRef<AuthFormComponent>;
@@ -29,15 +31,20 @@ export class AppComponent implements AfterViewInit{
       console.log(res);
     }); // equivalent to Output()
 
-
+    this.entry.createEmbeddedView(this.tmpl, {
+      $implicit: 'Kripakaran',
+      location: 'Los Angeles'
+    });
 
     this.cd.detectChanges();
   }
 
   // rememberMe: Boolean = false;
 
-
-
+  ctx =  {
+    $implicit: 'Kripakaran',
+    location: 'Los Angeles'
+  };
 
   loginUser(emittedUser: User){
     console.log('logged account', emittedUser);

@@ -18,7 +18,27 @@
             Move
         </button>
     </div>
-    
+
+</div>
+
+<div>
+
+<ng-template #tmpl let-name let-location = "location" >
+   <h1> {{ name }}, {{ location }} ! </h1>
+</ng-template>
+
+
+<!-- aliter implementation of dynamic template  -->
+
+
+<ng-container
+[ngTemplateOutlet] = "tmpl"
+[ngTemplateOutletContext] = "ctx"
+>
+
+
+</ng-container>
+
 </div>
 
 
