@@ -5,7 +5,7 @@
 
 <!-- dynamically rendering auth-form component below -->
 
-<div #entry>
+<!-- <div #entry>
 
     <div>
         <button (click)= "destroyComponent()">
@@ -28,20 +28,45 @@
 </ng-template>
 
 
-<!-- aliter implementation of dynamic template  -->
+ aliter implementation of dynamic template  -->
 
 
-<ng-container
+<!-- <ng-container
 [ngTemplateOutlet] = "tmpl"
 [ngTemplateOutletContext] = "ctx"
 >
 
 
-</ng-container>
-
-</div>
+</ng-container> -->
 
 
+
+
+
+
+
+    Credit Card Number
+    <input 
+        name = "creditCard"
+        type = "text"
+        placeholder = "enter your 16 digit card nunber"
+        credit-card
+    >
+
+
+    <div *ngFor = "let file of files;">
+        {{ file.name }}
+        {{ file.size | filesize}}
+        {{ file.type }}
+    </div>
+
+
+
+    <div *ngFor = "let file of mapped;">
+        {{ file.name }}
+        {{ file.size | filesize}}
+        {{ file.type }}
+    </div>
 
 
 

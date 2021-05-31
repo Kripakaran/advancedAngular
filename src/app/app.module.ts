@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { AuthRememberComponent } from './auth-remember/auth-remember.component';
 import { AuthMessageComponent } from './auth-message/auth-message.component';
+import { CreditCardDirective } from './credit-card.directive';
+import { FilesizePipe } from './filesize.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthFormComponent,
     AuthRememberComponent,
-    AuthMessageComponent
+    AuthMessageComponent,
+    CreditCardDirective,
+    FilesizePipe
   ],
   imports: [
     BrowserModule,
