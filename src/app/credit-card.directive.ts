@@ -12,7 +12,7 @@ export class CreditCardDirective {
     border: string;
   
 
-  @HostListener('input', ['$event'])
+  @HostListener('input', ['$event'])     // host is the <input> tag and we are listening for events on input
   onKeyDown(event: KeyboardEvent){
     // console.log(event); [value is present in event.target.value]
     const input = event.target as HTMLInputElement;
@@ -30,7 +30,7 @@ export class CreditCardDirective {
     input.value = numbers.join(' ');   // join the 16 numbers through empty space and output in the textbox
 
 
-    this.border = '1px solid blue';
+    this.border = '';
 
     if(/[^\d]+/.test(trimmed)){       // testing for alphabets in 16 digit input
       this.border = '1px solid red';    // if so, change border of textbox to red!
