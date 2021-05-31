@@ -12,13 +12,13 @@ export class AppComponent implements AfterViewInit{
 
   @ViewChild('entry', { read: ViewContainerRef }) entry: ViewContainerRef;
 
-  @ViewChild('tmpl') tmpl: TemplateRef<any>;
+ 
   
   
   component : ComponentRef<AuthFormComponent>;
   title = 'advanced-angular';
 
-
+  @ViewChild('tmpl') tmpl: TemplateRef<any>;
 
   constructor(private resolver: ComponentFactoryResolver, private cd : ChangeDetectorRef){}
 
